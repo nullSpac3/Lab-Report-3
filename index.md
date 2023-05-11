@@ -1,1 +1,46 @@
+## Researching Commands
 
+
+`find:`
+
+* `-mtime`
+
+     `find ../technical -type f -mtime -3`
+      
+     Searches for files in ../technical that have been modified in the last 3 days
+      
+      $ find ../technical -type f -mtime -3
+      ../technical/ground.txt
+      ../technical/test1/file.txt
+      ../technical/test1/water.txt
+      
+     `find ../technical -type d -mtime +5`
+     
+     Searches for directories in ../technical that have been modified more than 5 days ago
+     
+      $ find ../technical -type d -mtime +5  
+      
+
+* `-empty`
+
+     `find ../technical -type f -empty`
+     
+     Searches for empty files; can be used with `-delete` to delete empty files
+     
+      $ find ../technical -type f -empty
+      ../technical/ground.txt
+      ../technical/test1/file.txt
+      
+     
+     `find ../technical -type d -empty`
+     
+     Searches for empty files; can be used with `-delete` to delete empty directories 
+     
+      $ find ../technical -type d -empty
+      ../technical/dir2
+
+* `-delete`
+
+    `find ./technical -name "*.txt" -type f -delete`
+   
+    Deletes files found containing the extension ".txt" 
