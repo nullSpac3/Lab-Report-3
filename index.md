@@ -3,7 +3,7 @@
 
 `find`
 
-* `-mtime`
+* `-mtime` - source: ChatGPT
 
      `find ../technical -type f -mtime -3`
       
@@ -23,7 +23,7 @@
      `-mtime` can be used to sort files depending on "last modified" period
 <br>
 
-* `-empty`
+* `-empty` - [source]( https://stackoverflow.com/questions/2810838/finding-empty-directories)
 
      `find ../technical -type f -empty`
      
@@ -45,7 +45,7 @@
      `-empty` can be used with other `find` modifiers such as delete to delete empty files or directories
 <br>
 
-* `-delete`
+* `-delete` - [source]( https://stackoverflow.com/questions/2810838/finding-empty-directories)
 
     `find ../technical -name "*.txt" -type f -delete`
    
@@ -61,7 +61,7 @@
      
  <br>
  
-* `-type`
+* `-type` - source: ChatGPT
 
      `find ./technical -type f`
      
