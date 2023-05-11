@@ -1,7 +1,7 @@
 ## Researching Commands
 
 
-`find:`
+`find`
 
 * `-mtime`
 
@@ -20,6 +20,8 @@
      
       $ find ../technical -type d -mtime +5  
       
+     `-mtime` can be used to sort files depending on "last modified" period
+<br>
 
 * `-empty`
 
@@ -38,9 +40,41 @@
      
       $ find ../technical -type d -empty
       ../technical/dir2
+      
+     
+     `-empty` can be used with other `find` modifiers such as delete to delete empty files or directories
+<br>
 
 * `-delete`
 
-    `find ./technical -name "*.txt" -type f -delete`
+    `find ../technical -name "*.txt" -type f -delete`
    
     Deletes files found containing the extension ".txt" 
+    
+      $ find ../technical -name "*.txt" -type f -delete
+
+    Deletes empty directories 
+    
+      $ find ../techincal -type d -empty -delete
+      
+    `-delete` can be used with modifiers such as `-empty` to delete target files or directories
+     
+ <br>
+ 
+* `-type`
+
+     `find ./technical -type f`
+     
+     Finds items of f (file) specification
+     
+      $ find ../technical -type f
+      ../technical/air.txt
+      ../technical/ground.txt
+      ../technical/water.txt
+      
+     `find ../technical -type d -name "dir2"`
+     
+     Finds items of d (directory) specification that have the name "dir2"
+     
+       $ find ../technical -type d -name "dir2"
+       ../technical/dir2
