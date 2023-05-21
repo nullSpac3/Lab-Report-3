@@ -22,6 +22,7 @@
      The reason there is no output from the previous input is because there were no files in the directory that were modified more than 5 days ago.
      
      `-mtime` can be used to sort files depending on "last modified" period. I would like to assume that this options is used in file management, for instance, I think of it as the sort button in windows' file explorer
+
 <br>
 
 * `-empty` - [source]( https://stackoverflow.com/questions/2810838/finding-empty-directories)
@@ -44,6 +45,7 @@
       
      
      `-empty` can be used with other `find` modifiers such as delete to delete empty files or directories. It could help find unneccesary files and directories to prevent a cluttered workspace and confusion that can arise with having numerous empty files or directories
+
 <br>
 
 * `-delete` - [source]( https://stackoverflow.com/questions/2810838/finding-empty-directories)
