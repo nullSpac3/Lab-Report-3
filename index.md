@@ -43,7 +43,7 @@
       ../technical/dir2
       
      
-     `-empty` can be used with other `find` modifiers such as delete to delete empty files or directories. It could help prevent a cluttered workspace and confusion that arises with having numerous empty files or directories
+     `-empty` can be used with other `find` modifiers such as delete to delete empty files or directories. It could help find unneccesary files and directories to prevent a cluttered workspace and confusion that can arise with having numerous empty files or directories
 <br>
 
 * `-delete` - [source]( https://stackoverflow.com/questions/2810838/finding-empty-directories)
@@ -54,11 +54,27 @@
     
       $ find ../technical -name "*.txt" -type f -delete
 
+    Directory before and after the command was run:
+    
+      $ ls
+      dir2/  fire.txt  test1/  water.txt
+      
+      $ ls
+      dir2/  test1/
+    
     Deletes empty directories 
     
-      $ find ../techincal -type d -empty -delete
+      $ $ find . -type d -delete
+   
+    Directory before and after the command was run:  
       
-    `-delete` can be used with modifiers such as `-empty` to delete target files or directories
+      $ ls
+      dir2/  test1/
+      
+      $ ls
+      
+      
+    `-delete` can be used with modifiers such as `-empty` to delete target files or directories. Similar to `-empty`, it can be used to nullify confusion. Additionally, it helps remove multiple files of the same extension at once, as oppose to navigating to delete multiple files consecutively. 
      
  <br>
  
@@ -79,7 +95,8 @@
      
        $ find ../technical -type d -name "dir2"
        ../technical/dir2
-
+    
+     `-type` is followed by a character, such as `f` which denotes a file, that represents a file type. It can be used to navigate for specific file types throughout a directory. It can also be combined with the latter two options to execute operations on more specific files
 
 <br>
 <br>
