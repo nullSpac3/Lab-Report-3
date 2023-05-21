@@ -4,7 +4,7 @@
 `find`
 
 * `-mtime` - source: ChatGPT*
-
+    
      `find ../technical -type f -mtime -3`
       
      Searches for files in ../technical that have been modified in the last 3 days
@@ -19,8 +19,9 @@
      Searches for directories in ../technical that have been modified more than 5 days ago
      
       $ find ../technical -type d -mtime +5  
-      
-     `-mtime` can be used to sort files depending on "last modified" period
+     The reason there is no output from the previous input is because there were no files in the directory that were modified more than 5 days ago.
+     
+     `-mtime` can be used to sort files depending on "last modified" period. I would like to assume that this options is used in file management, for instance, I think of it as the sort button in windows' file explorer
 <br>
 
 * `-empty` - [source]( https://stackoverflow.com/questions/2810838/finding-empty-directories)
@@ -36,13 +37,13 @@
      
      `find ../technical -type d -empty`
      
-     Searches for empty files; can be used with `-delete` to delete empty directories 
+     Searches for empty directories; can be used with `-delete` to delete empty directories 
      
       $ find ../technical -type d -empty
       ../technical/dir2
       
      
-     `-empty` can be used with other `find` modifiers such as delete to delete empty files or directories
+     `-empty` can be used with other `find` modifiers such as delete to delete empty files or directories. It could help prevent a cluttered workspace and confusion that arises with having numerous empty files or directories
 <br>
 
 * `-delete` - [source]( https://stackoverflow.com/questions/2810838/finding-empty-directories)
@@ -83,9 +84,14 @@
 <br>
 <br>
 
+## ChatGPT
+
 * For this report, I consulted ChatGPT. The queries I supplied revolved around asking it for options which can be used with the command find. Additionally, I asked it to elaborate on some of those options to further my understanding of each. Here are my queries and ChatGPT's responses: 
 
+<br>
+
 `command line options for find (bash)`
+* Here I was just looking for an idea of what interesting options are available to use alongside the find command and I think ChatGPT hit the mark. I ended up utlizing `-mtime` and `-type` because I think they could be used regularly in file management stuff.
 
 <br>
 
@@ -154,8 +160,12 @@
 
      These are just a few examples of the options available for the `find` command. You can find more options and detailed information in the `find` command's manual page by running `man find` in your terminal.
 
+<br>
 
 `what does -delete do in bash`
+* For this and the following query, I was looking for clarification and examples of using the respective options
+
+<br>
 
      In Bash, the `-delete` option is used with the `find` command to delete files and directories that match the specified criteria. When combined with the `find` command, the `-delete` option removes the found items from the file system.
 
@@ -168,3 +178,27 @@
      In this example, the command searches for regular files (`-type f`) within the `./technical` directory that have the extension ".txt" (`-name "*.txt"`) and then deletes them (`-delete`).
 
      It's important to exercise caution when using the `-delete` option because it directly removes the matched files or directories from the file system without confirmation. Make sure to double-check the search criteria and be certain of the files or directories you want to delete before using this option.
+
+<br>
+
+`how about -type`
+
+     The `-type` option in the `find` command is used to specify the type of items to search for within the specified directory hierarchy. It allows you to narrow down the search to specific types of files, directories, or other items. Here are some commonly used arguments for the `-type` option:
+
+     - `-type f`: This searches for regular files.
+     - `-type d`: This searches for directories.
+     - `-type l`: This searches for symbolic links.
+     - `-type b`: This searches for block special files (usually devices).
+     - `-type c`: This searches for character special files (usually devices).
+     - `-type s`: This searches for socket files.
+     - `-type p`: This searches for named pipes (FIFOs).
+
+     Here's an example to illustrate the usage of the `-type` option:
+
+     ```bash
+     find ./technical -type f -name "*.txt"
+     ```
+
+     In this example, the command searches for regular files (`-type f`) within the `./technical` directory that have the extension ".txt" (`-name "*.txt"`). It will only match and display regular files with the specified name pattern.
+
+     By utilizing the `-type` option, you can customize your search to focus on specific types of files or directories within the given directory hierarchy.
