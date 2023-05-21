@@ -101,7 +101,7 @@
 <br>
 <br>
 
-## ChatGPT
+## *ChatGPT
 
 * For this report, I consulted ChatGPT. The queries I supplied revolved around asking it for options which can be used with the command find. Additionally, I asked it to elaborate on some of those options to further my understanding of each. Here are my queries and ChatGPT's responses: 
 
